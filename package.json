@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon ./src/app.js"
   },
-  "author": "gauravmendhare15",
+  "author": "Dheerajraj7879",
   "license": "ISC",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.348.0",

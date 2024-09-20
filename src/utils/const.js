@@ -1,33 +1,54 @@
-exports.PROTOCOL_CONSTANT = Object.freeze({
+const PROTOCOL_CONSTANT = Object.freeze({
     HTTP: "https",
     HTTPS: "https"
 })
 
-exports.FileDirectoryType = Object.freeze({
-    1: '/course',
-    2: '/client',
-    3: '/gallery',
-    4: '/blog',
-    5: '/center',
-    6: '/course_category',
-    99: '/default',
-    100: '/csvfiles'
+
+const ERROR_MSG = "Internal Server Error"
+
+const HttpStatus = Object.freeze({
+    OK: 200,
+    CREATED: 201,
+    BAD_REQUEST: 400,
+    UNAUTHORIZED: 401,
+    FORBIDDEN: 403,
+    NOT_FOUND: 404,
+
+    INTERNAL_SERVER_ERROR: 500,
 
 })
 
-exports.ConfigurationEmail = Object.freeze("CONFIGURATIONEMAIL")
-exports.AboutUs = Object.freeze("ABOUTUS");
-exports.PrivacyPolicy = Object.freeze("PRIVACYPOLICY");
-exports.CopyRight = Object.freeze("COPYRIGHT");
-exports.TermsAndCondition = Object.freeze("TERMSANDCONDITION");
-exports.RefundPolicy = Object.freeze("REFUNDPOLICY");
-exports.AboutUsv1 = Object.freeze("AboutUsv1");
-exports.QuickLinks = Object.freeze("QUICKSLINKS");
-exports.PrivacyPolicyLinks = Object.freeze("PRIVACYPOLICYLINKS");
-exports.RefundPolicyLinks = Object.freeze("REFUNDPOLICYLINKS");
-exports.TopLinks = Object.freeze("TOPLINKS");
-exports.TutorialBanner = Object.freeze("TUTORIALBANNER");
-exports.Notification = Object.freeze("NOTIFICATION");
+const UserRoleConstant = Object.freeze({
+    Admin: "Admin",
+    Client: "Client",
+    Designer: "Designer",
+    User: "User",
+    SuperAdmin: "Super Admin",
+    SalesPerson: "SalesPerson",
+})
 
+const FileDirectoryType = Object.freeze({
+    99: '/default',
+    100: '/csvfiles',
+    1: '/design',
+    2: '/watermark',
+    3: '/pdf_img',
+    4: "/server_pdf",
+    5: "/design_pdf",
+    6: "/tif_img",
+    7: "/server_tiff",
+    8: "/drivepdf"
+})
 
-exports.ERROR_MSG = "Internal Server Error"
+const DefaultConstantType = Object.freeze({
+    MasterPassword: "Clothwari@12345",
+})
+
+module.exports = {
+    PROTOCOL_CONSTANT,
+    ERROR_MSG,
+    HttpStatus,
+    UserRoleConstant,
+    FileDirectoryType,
+    DefaultConstantType,
+}
