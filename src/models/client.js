@@ -5,9 +5,9 @@ const ClientSchema = new mongoose.Schema({
     companyName: { type: String },
     parentCompany: { type: String },
     inquiryName: { type: String },
-    substitute: {type:String},
-    clintCode: { type: String },
-    date: { type: String },
+    substitute: { type: Boolean },
+    clientCode: { type: String },
+    datecreated: { type: String },
     name: { type: String },
     email: { type: String },
     clientphone: { type: String },
@@ -16,11 +16,12 @@ const ClientSchema = new mongoose.Schema({
     altClientEXT: { type: String },
     faxNumber: { type: String },
     faxInstruction: { type: String },
+    clientNote: {type:String},
     ownername: { type: String },
     ownerphone: { type: String },
     ownerEXT: { type: String },
     owneremail: { type: String },
-    status: { type: String },
+    accountstatus: { type: String },
     disabledMessage: { type: String },
     disabledReason: { type: String },
     physical_address: {
@@ -39,10 +40,13 @@ const ClientSchema = new mongoose.Schema({
         state: { type: String },
         country: { type: String },
     },
-    Altclientphone: { type: String },
+    attentionto: { type: String },
     displayProductSection: { type: Boolean, default:false },
     productSection: { type: String },
-    affiliated: { type: String },
+    affiliated: [{
+        label: { type: String },
+        value: { type: String }
+    }],
     invoice: { type: Boolean, default:false },
     isDel: { type: Boolean, default: false }
 }, { timestamps: true, strict: true })

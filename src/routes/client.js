@@ -1,13 +1,9 @@
 const router = require("express").Router();
 const clientController = require("../controllers/client.controller");
-const ClientSchema = require("../validators/clientSchema");
-const validator = require("../middleware/validator");
+const {auth} = require("../middleware/auth")
 
-
-
-router.post('/', 
-    // validator('body', ClientSchema.createEditCient),
-    clientController.createEditClient
-);
+router.post('/',auth,clientController.createEditClient);
+router.post('/list',auth,clientController.clientList);
+router.delete("/:id",auth, clientController.deleteClient);
 
 module.exports = router;

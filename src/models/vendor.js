@@ -9,6 +9,7 @@ const VendorSchema = new mongoose.Schema({
     vendorphone: { type: String },
     service: [{ type: String }],
     vendorstatus: { type: String },
+    isact: { type: Boolean, default: true },
     isDel: { type: Boolean, default: false }
 }, { timestamps: true, strict: true })
 

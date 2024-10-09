@@ -13,6 +13,7 @@ const UserSchema = new mongoose.Schema({
         type: String, enum: [
             "Super Admin",
             "Staff",
+            "Vendor"
         ]
     }
 }, { timestamps: true, strict: true })
